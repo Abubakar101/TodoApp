@@ -2,10 +2,15 @@
 
 
 <ul>
-  <% @comments.each do |c|%>
-   <p> Comment: <%= c.comment %> <%= link_to 'Edit', edit_user_comment_path(c)%> <%= link_to "Del", user_comment_path(c), method: :delete %> </p>
+  <% @users.each do |c|%>
+   <p> <%= c.name %> 
+      <%= c.username %>
+      <%= c.password %>
+   
+   
+   <%= link_to 'Edit', edit_user_path(c)%> <%= link_to "Del", user_path(c), method: :delete %> </p>
   <% end %>
 </ul>
 
 <%= link_to 'Home', users_path %> |
-<%= link_to 'Add Comment', new_user_comment_path(@user) %>
+<%= link_to 'Add User', new_user_path(@user) %>

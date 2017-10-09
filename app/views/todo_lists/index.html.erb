@@ -1,0 +1,12 @@
+<h1>All TodoLists</h1>
+<ul>
+  <% @todoLists.each do |u|%>
+    <p><%= link_to u.title, user_todolists_path(u) %>  </p>
+    <p><%= link_to u.description, user_todolists_path(u) %>  </p>
+    <p><%= link_to u.category, user_todolists_path(u) %>  </p>
+    <p><%= link_to u.status, user_todolists_path(u) %>  </p>
+    <%= link_to 'Edit', edit_user_todolist_path(u) %> <%= link_to "Del", user_todolist_path(u), method: :delete%>
+  <% end %>
+</ul>
+  <p><%= link_to "Add a NEW TodoList", new_user_todolist_path %></p>
+
