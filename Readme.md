@@ -70,6 +70,6 @@ Use this section to include a brief code snippet of functionality that you are p
 **ERROR**: `PG::UndefinedTable: ERROR:  relation "categories" does not exist`                               
 **RESOLUTION**: Deleted the `foreign_key: true` from `t.references` values
 
-**ERROR**: PG::UndefinedColumn: ERROR:  column "user" does not exist                               
+**ERROR**: `PG::UndefinedColumn: ERROR:  column "user" does not exist`                               
 **RESOLUTION**: Deleted the `add_index` to user
 
