@@ -1,16 +1,11 @@
-<h1 id="notice"><%= @user.name%></h1>
+<h1 id="notice"><%= @user.inspect%></h1>
 
-
-<ul>
-  <% @users.each do |c|%>
-   <p> <%= c.name %> 
-      <%= c.username %>
-      <%= c.password %>
+<%= @user.name%>
+<%= @user.username%>
+<%= @user.password%>
    
    
-   <%= link_to 'Edit', edit_user_path(c)%> <%= link_to "Del", user_path(c), method: :delete %> </p>
-  <% end %>
-</ul>
+   <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to "Del", user_path(@user), method: :delete %>
 
-<%= link_to 'Home', users_path %> |
-<%= link_to 'Add User', new_user_path(@user) %>
+<%= link_to 'Home', users_path %>
