@@ -1,0 +1,9 @@
+<h1>All Users</h1>
+<ul>
+  <% @users.each do |u|%>
+    <li><%= link_to u.name, user_path(u) %>  <%= link_to 'Edit', edit_user_path(u) %> <%= link_to "Del", user_path(u), method: :delete%></li>
+  <% end %>
+</ul>
+  <p><%= link_to "Add a NEW USER", new_user_path %></p>
+
+<p></p>

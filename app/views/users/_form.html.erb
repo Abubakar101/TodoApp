@@ -1,0 +1,10 @@
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :place_holder => "Add a New User" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
