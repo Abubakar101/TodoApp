@@ -1,6 +1,6 @@
-class CreateTodoLists < ActiveRecord::Migration[5.1]
+class CreateTodolists < ActiveRecord::Migration[5.1]
   def change
-    create_table :todo_lists do |t|
+    create_table :todolists do |t|
       t.references :user
       t.string :title
       t.text :description

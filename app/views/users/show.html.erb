@@ -1,11 +1,12 @@
 <h1 id="notice"><%= @user.inspect%></h1>
 
-<%= @user.name%>
-<%= @user.username%>
-<%= @user.password%>
+<p><%= @user.name%></p>
+<p><%= @user.username%></p>
+<p><%= @user.password%></p>
    
    
    <%= link_to 'Edit', edit_user_path(@user) %> |
-    <%= link_to "Del", user_path(@user), method: :delete %>
+    <%= link_to "Del", user_path(@user), method: :delete %> |
 
 <%= link_to 'Home', users_path %>
+<%= link_to 'TodoList', user_todolists_path(@user) %>
