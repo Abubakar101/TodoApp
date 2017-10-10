@@ -1,0 +1,14 @@
+debug
+<%= form_for([@user, @category]) do |f| %>
+
+
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, :place_holder => "Add a Category" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

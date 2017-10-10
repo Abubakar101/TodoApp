@@ -1,13 +1,16 @@
-<h1 id="notice"><%= @todoList.name%></h1>
+<%# <h1 id="notice"><%= @category%></h1> %>
+<%# <h1 id="notice"><%= @category.inspect%></h1> %>
 
 
 <ul>
-  <% @todoList.each do |u|%>
-   <p><%= link_to u.title, user_todolist_path(u) %>  </p>
-    <p><%= link_to u.description, user_todolist_path(u) %>  </p>
-    <p><%= link_to u.category, user_todolist_path(u) %>  </p>
-    <p><%= link_to u.status, user_todolist_path(u) %>  </p>
-    <%= link_to 'Edit', edit_user_todolist_path(u) %> <%= link_to "Del", user_todolist_path(u), method: :delete%>
+  <% @category.each do |u|%>
+   
+    <p><%= link_to u.title%>  </p>
+    <p><%= link_to u.description%>  </p>
+    <p><%= link_to u.category%>  </p>
+    <p><%= link_to u.status%>  </p>
+    <%= link_to 'Edit', edit_user_category_path(u) %>
+     <%= link_to "Del", user_category_path(u), method: :delete %>
   <% end %>
 </ul>
 

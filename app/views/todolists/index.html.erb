@@ -1,6 +1,8 @@
 <h1>All TodoLists</h1>
 
  <% @todolists.inspect%>
+<p><%= link_to "Add a NEW TodoList", new_user_todolist_path %> 
+<%= link_to 'Cat', user_categories_path(@user) %></p>
 
 <ul>
   <% @todolists.each do |u|%>
@@ -13,5 +15,5 @@
     <%= link_to "Del", user_todolist_path(@user, u), method: :delete%>
   <% end %>
 </ul>
-  <p><%= link_to "Add a NEW TodoList", new_user_todolist_path %></p>
+  
 
