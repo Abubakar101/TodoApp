@@ -12,12 +12,15 @@ class TodolistsController < ApplicationController
    end
 
    def create
+    @user = User.find(params[:user_id])
        @todolist = Todolist.new(todolist_params)
+       @todolist[:user_id] = @user.id
        respond_to do |format|
          if @todolist.save
-           format.html { redirect_to @todolist, notice: 'Post was successfully created.' }
+           format.html { redirect_to user_todolists_path, notice: 'Post was successfully created.' }
            format.json { render :show, status: :created, location: @todolist }
          else
+            debug
            format.html { render :new }
            format.json{ render json: @todolist.errors, status: :unprocessable_entity }
          end
@@ -25,13 +28,14 @@ class TodolistsController < ApplicationController
    end
 
    def new
+    @user = User.find(params[:user_id])
        @todolist = Todolist.new
    end
 
    def destroy
        @todolist.destroy
        respond_to do |format|
-         format.html { redirect_to todolists_url, notice: 'Post was successfully destroyed.' }
+         format.html { redirect_to user_todolists_path, notice: 'Post was successfully destroyed.' }
          format.json { head :no_content }
        end
    end
