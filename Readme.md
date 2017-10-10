@@ -73,3 +73,8 @@ Use this section to include a brief code snippet of functionality that you are p
 **ERROR**: `PG::UndefinedColumn: ERROR:  column "user" does not exist`                               
 **RESOLUTION**: Deleted the `add_index` to user
 
+**ERROR**: `undefined method update for nil:NilClass`                              
+**RESOLUTION**: Added parent ID inside the `set_todolist` i.e., `@user = User.find(params[:user_id])`
+
+
+
