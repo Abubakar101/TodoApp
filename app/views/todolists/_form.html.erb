@@ -1,16 +1,20 @@
-<%= form_for([@user, @todoList]) do |f| %>
+<%= form_for([@user, @todolist]) do |f| %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, :place_holder => "Add a New Name" %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :place_holder => "Add a Title" %>
   </div>
   <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username, :place_holder => "Add a New UserName" %>
+    <%= f.label :description %><br>
+    <%= f.text_field :description, :place_holder => "Add a Description" %>
   </div>
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password, :place_holder => "Add a New Password" %>
+    <%= f.label :category %><br>
+    <%= f.text_field :category, :place_holder => "Add a Category" %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status, :place_holder => "Add True or False" %>
   </div>
   <div class="actions">
     <%= f.submit %>

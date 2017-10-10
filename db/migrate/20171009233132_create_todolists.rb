@@ -4,7 +4,7 @@ class CreateTodolists < ActiveRecord::Migration[5.1]
       t.references :user
       t.string :title
       t.text :description
-      t.references :category
+      t.string :category
       t.string :status
       # t.references :api
 

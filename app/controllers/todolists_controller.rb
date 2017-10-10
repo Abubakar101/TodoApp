@@ -2,11 +2,12 @@ class TodolistsController < ApplicationController
     before_action :set_todolist, only: [:show, :edit, :update, :destroy]
 
    def index
+        @user = User.find(params[:user_id])
        @todolists = Todolist.order('id ASC').all
    end
 
    def show
-       # @user = User.find(params[:id])
+    #    @user = User.find(params[:user_id])
        # @comments = Comment.where("user_id = ?", params[:id])
    end
 
@@ -36,9 +37,12 @@ class TodolistsController < ApplicationController
    end
   
    def update
+    # p = todolist_params
+    # p[:category] = Category.find(todolist_params[:category])
+
        respond_to do |format|
-         if @todoList.update(todolist_params)
-           format.html { redirect_to @todolist, notice: 'Post was successfully updated.' }
+         if @todolist.update(todolist_params)
+           format.html { redirect_to user_todolist_path, notice: 'Post was successfully updated.' }
          else
            format.html { render :edit }
          end
@@ -46,11 +50,14 @@ class TodolistsController < ApplicationController
    end
 
    private
-   def set_todolist
-     @todolist = Todolist.find(params[:user_id])
+   def set_todolist 
+    @user = User.find(params[:user_id])
+    @todolist = Todolist.find(params[:id])
+    
    end
     def todolist_params
      params.require(:todolist).permit(:title, :description, :category, :status)
    end
+
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008235849) do
+ActiveRecord::Schema.define(version: 20171009233132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,22 +20,15 @@ ActiveRecord::Schema.define(version: 20171008235849) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "todo_lists", force: :cascade do |t|
+  create_table "todolists", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title"
     t.text "description"
-    t.bigint "category_id"
+    t.string "category"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_todo_lists_on_category_id"
-    t.index ["user_id"], name: "index_todo_lists_on_user_id"
+    t.index ["user_id"], name: "index_todolists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

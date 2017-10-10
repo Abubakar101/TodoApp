@@ -10,8 +10,8 @@
 yan = User.create!(name: 'Yan', username: 'xyanz', password: 'abu')
 
 
-# Category 
-junk_food = Category.create!(name: 'junkfood')
+# # Category 
+# junk_food = Category.create!(name: 'junkfood')
 
 # To Do list item
-first_item = Todolist.create!(user: yan, title: 'Need pizza', description: 'GA has it!', category: junk_food , status: 'true' )
+first_item = Todolist.create!(user: yan, title: 'Need pizza', description: 'GA has it!', category: 'junk_food' , status: 'true' )
