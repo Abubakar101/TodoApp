@@ -50,7 +50,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Feature | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Planning | H | 1 day | 8 hrs |  |
+| Project Planning | H | 1 day | 8 hrs |  |
 | Backend | H | 2 day | 1.1 days |  |
 
 ## Code Snippet
