@@ -14,6 +14,7 @@ class TodolistsController < ApplicationController
    def create
     @user = User.find(params[:user_id])
        @todolist = Todolist.new(todolist_params)
+       @todolist.user = current_user
        @todolist[:user_id] = @user.id
        respond_to do |format|
          if @todolist.save

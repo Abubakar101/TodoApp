@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # User Name
-yan = User.create!(name: 'Yan', username: 'xyanz', password: 'abu')
+yan = User.create!(name: 'Yan', email:'xyanz@gmail.com', username: 'xyanz101', password: 'abulovesbroyan')
 
 
 # # Category 
