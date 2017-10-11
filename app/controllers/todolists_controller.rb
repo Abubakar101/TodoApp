@@ -2,11 +2,23 @@ class TodolistsController < ApplicationController
     before_action :set_todolist, only: [:show, :edit, :update, :destroy]
 
    def index
-        @user = User.find(params[:user_id])
+        # @user = User.find(params[:user_id])
        @todolists = Todolist.order('id ASC').all
+       
+       render json: { message: "ok", todolists_data: @todolists }
    end
 
    def show
+    
+    begin
+        @todolists = Todolist.find(params[:id])
+        render json: { message: "ok", todolists_data: @todolist }
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: "no quote matches that ID" }
+      rescue Exception
+        render json: { message: "there was some other error" }
+      end
+
    end
 
 #    def create
@@ -26,10 +38,10 @@ class TodolistsController < ApplicationController
 #   end
 
    def create
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
        @todolist = Todolist.new(todolist_params)
-       @todolist[:user_id] = @user.id
-       @todolist.user = current_user
+    #    @todolist[:user_id] = @user.id
+    #    @todolist.user = current_user
        respond_to do |format|
          if @todolist.save
            format.html { redirect_to user_todolists_path, notice: 'Post was successfully created.' }
@@ -43,7 +55,7 @@ class TodolistsController < ApplicationController
    end
 
    def new
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
        @todolist = Todolist.new
    end
 
@@ -70,7 +82,7 @@ class TodolistsController < ApplicationController
 
    private
    def set_todolist 
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
     @todolist = Todolist.find(params[:id])
     
    end

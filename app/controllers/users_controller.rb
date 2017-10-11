@@ -1,25 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!  
+  # before_action :authenticate_user!  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
         @users = User.order('id ASC').all
-        render json: { message: "ok", users_data: @users }
-        
-
     end
 
     def show
-
-        @user = User.find(params[:id])
-        # @comments = Comment.where("user_id = ?", params[:id])
-          begin
-            render json: { message: "ok", users_data: @user }
-          rescue ActiveRecord::RecordNotFound
-            render json: { message: "no user matches that ID" }
-          rescue Exception
-            render json: { message: "there was some other error" }
-          end
     end
 
     def create
