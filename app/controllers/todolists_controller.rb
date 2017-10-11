@@ -7,15 +7,29 @@ class TodolistsController < ApplicationController
    end
 
    def show
-    #    @user = User.find(params[:user_id])
-       # @comments = Comment.where("user_id = ?", params[:id])
    end
+
+#    def create
+#     @user = User.find(params[:user_id])
+#     @todolist = Todolist.new(todolist_params)
+#     @todolist[:user_id] = @user.id
+#     @todolist.user = current_user
+#     @todolist.save
+#     if @todolist.save
+#         debug
+    
+#     puts @todolist 
+#     puts @todolist.user
+#     puts @todolist[:user_id]
+#     redirect_to user_todolists_path
+#     end
+#   end
 
    def create
     @user = User.find(params[:user_id])
        @todolist = Todolist.new(todolist_params)
-       @todolist.user = current_user
        @todolist[:user_id] = @user.id
+       @todolist.user = current_user
        respond_to do |format|
          if @todolist.save
            format.html { redirect_to user_todolists_path, notice: 'Post was successfully created.' }
