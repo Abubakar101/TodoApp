@@ -4,11 +4,22 @@ class UsersController < ApplicationController
 
     def index
         @users = User.order('id ASC').all
+        render json: { message: "ok", users_data: @users }
+        
+
     end
 
     def show
-        # @user = User.find(params[:id])
+
+        @user = User.find(params[:id])
         # @comments = Comment.where("user_id = ?", params[:id])
+          begin
+            render json: { message: "ok", users_data: @user }
+          rescue ActiveRecord::RecordNotFound
+            render json: { message: "no user matches that ID" }
+          rescue Exception
+            render json: { message: "there was some other error" }
+          end
     end
 
     def create
