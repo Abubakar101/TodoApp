@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { Route, Switch, Link } from "react-router-dom";
 import axios from "axios";
-
+// import Categories from"./components/Categories";
 
 class Todolists extends Component {
   constructor() {
@@ -27,12 +28,14 @@ class Todolists extends Component {
   }
 
   showTodolistsOnPage() {
-    return this.state.apiData.map(quote => {
+    return this.state.apiData.map(todolist => {
       return (
-        <div className="quote" key={quote.id}>
-          <p>{quote.title}</p>
-          <span className="category">{quote.description}</span>
-          <span className="category">{quote.status}</span>
+        <div className="todolist" key={todolist.id}>
+          <p>{todolist.title}</p>
+          <p>{todolist.category} <Link to = "/categories/:category">CAT</Link></p>
+          <span className="category">{todolist.description}</span>
+          <span className="category">{todolist.status}</span>
+          
         </div>
       );
     });
@@ -47,6 +50,7 @@ class Todolists extends Component {
           ) : (
             <p>Loading...</p>
           )}
+         
         </div>
       </div>
     );
@@ -54,3 +58,4 @@ class Todolists extends Component {
 }
 
 export default Todolists;
+// <Route exact path="/categories" component={Categories} />

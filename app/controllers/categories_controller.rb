@@ -2,9 +2,10 @@ class CategoriesController < ApplicationController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 
     def index
-        @user = User.find(params[:user_id])
-        @categories = Todolist.pluck(:category)
-
+        # @user = User.find(params[:user_id])
+        @todolists = Todolist.where(:category => params[:category]).all
+        # @categories = Todolist.pluck(:category)
+        render json: { message: "ok", categories_data: @todolists }
     end
 
     def show
