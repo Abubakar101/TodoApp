@@ -1,22 +1,24 @@
 <%= form_for([@user, @todolist]) do |f| %>
+  <div class="addContainer">
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, :place_holder => "Add a Title" %>
+    <div class="userInfo">
+      <%= f.label :title %><br>
+        <%= f.text_field :title, :place_holder => "Title" %>
+    </div>
+    <div class="userInfo">
+      <%= f.label :category %><br>
+        <%= f.text_field :category, :place_holder => "Category" %>
+    </div>
+    <div class="userInfo">
+      <%= f.label :description %><br>
+        <%= f.text_field :description, :place_holder => "Description" %>
+    </div>
+    <div class="buttons">
+      <button  type="submit"><%= f.submit 'Update Item', :class => 'Submit' %></button>
+    </div>
+        <div class="buttons">
+          <%= link_to '↼ Back to List', user_todolists_path %>
+        </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description, :place_holder => "Add a Description" %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category, :place_holder => "Add a Category" %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status, :place_holder => "Add True or False" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+

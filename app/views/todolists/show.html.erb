@@ -1,14 +1,20 @@
-<h1 id="notice"><%= @todolist.inspect%></h1>
-
-<p><%= @todolist.title%></p>
-<p><%= @todolist.description%></p>
-<p><%= @todolist.category%></p>
-<p><%= @todolist.status%></p>
-
-
-
-    <%= link_to 'Edit', edit_user_todolist_path %> |
-    <%= link_to "Del", user_todolist_path, method: :delete%> |
-
-
-<%= link_to 'Home', users_path %>
+<div class="infoContainer">
+    <div class="infoTitle"><b><%= @todolist.title%></b></div>
+    <div class="infoStatus"><b>STATUS : <%= @todolist.status%></b></div>
+    <div class="infoDescription">
+        <p>
+            <%= @todolist.description%>
+        </p>
+    </div>
+    <div class="buttons">
+        <div class="infoEditBtn">
+            <%= link_to 'EDIT', edit_user_todolist_path %>
+        </div>
+        <button class="infoDelBtn"><%= link_to "DEL", user_todolist_path, method: :delete%></button>
+    </div>
+    <div class="buttons">
+        <div class="backBtn">
+            <%= link_to '↼ Back to List', user_todolists_path %>
+        </div>
+    </div>
+</div>

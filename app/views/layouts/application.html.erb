@@ -4,14 +4,32 @@
     <title>TodoApp</title>
     <%= csrf_meta_tags %>
 
+
+
+  <link href="https://fonts.googleapis.com/css?family=Saira|Gloria+Hallelujah" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <div class="container">
+  <header>
+    <div class="topNav">
+      <%# <div id="home" class="navText"><a href="/">HOME</a></div> %>
+      <div id="about" class="navText"><a href="/about">ABOUT</a></div>
+      <%# <div id="todo" class="navText"><a href="/todoslists/">TO-DO</a></div> %>
+    </div>
+  </header>
 
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
+  <footer>
+    <div class="bottom">
+      <div class="bottomText">APP By <strong>ABK</strong><span> &#9829;</span></div>
+    </div>
+  </footer>
 </html>

@@ -32,7 +32,7 @@ class Todolists extends Component {
       return (
         <div className="todolist" key={todolist.id}>
           <p>{todolist.title}</p>
-          <p>{todolist.category} <Link to = "/categories/:category">CAT</Link></p>
+          <p>{todolist.category} </p>
           <span className="category">{todolist.description}</span>
           <span className="category">{todolist.status}</span>
           
@@ -45,6 +45,7 @@ class Todolists extends Component {
     return (
       <div className="App">
         <div>
+        <Link to = "/categories">CAT</Link>
           {this.state.apiDataLoaded ? (
             this.showTodolistsOnPage()
           ) : (

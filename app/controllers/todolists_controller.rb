@@ -2,22 +2,22 @@ class TodolistsController < ApplicationController
     before_action :set_todolist, only: [:show, :edit, :update, :destroy]
 
    def index
-        # @user = User.find(params[:user_id])
+        @user = User.find(params[:user_id])
        @todolists = Todolist.order('id ASC').all
        
-       render json: { message: "ok", todolists_data: @todolists }
+    #    render json: { message: "ok", todolists_data: @todolists }
    end
 
    def show
     
-    begin
-        @todolists = Todolist.find(params[:id])
-        render json: { message: "ok", todolists_data: @todolist }
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: "no quote matches that ID" }
-      rescue Exception
-        render json: { message: "there was some other error" }
-      end
+    # begin
+    #     @todolists = Todolist.find(params[:id])
+    #     render json: { message: "ok", todolists_data: @todolist }
+    #   rescue ActiveRecord::RecordNotFound
+    #     render json: { message: "no quote matches that ID" }
+    #   rescue Exception
+    #     render json: { message: "there was some other error" }
+    #   end
 
    end
 
@@ -38,9 +38,9 @@ class TodolistsController < ApplicationController
 #   end
 
    def create
-    # @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
        @todolist = Todolist.new(todolist_params)
-    #    @todolist[:user_id] = @user.id
+       @todolist[:user_id] = @user.id
     #    @todolist.user = current_user
        respond_to do |format|
          if @todolist.save
@@ -55,7 +55,7 @@ class TodolistsController < ApplicationController
    end
 
    def new
-    # @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
        @todolist = Todolist.new
    end
 
@@ -68,8 +68,8 @@ class TodolistsController < ApplicationController
    end
   
    def update
-    # p = todolist_params
-    # p[:category] = Category.find(todolist_params[:category])
+    p = todolist_params
+    p[:category] = Category.find(todolist_params[:category])
 
        respond_to do |format|
          if @todolist.update(todolist_params)
@@ -82,7 +82,7 @@ class TodolistsController < ApplicationController
 
    private
    def set_todolist 
-    # @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @todolist = Todolist.find(params[:id])
     
    end

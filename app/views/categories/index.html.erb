@@ -1,14 +1,10 @@
 <h1>All Categories</h1>
 
-<%# <%= @categories.inspect %> %>
-
 <ul>
-  <% @categories.each do |u| %>
+  <% @todolists.each do |u| %>
     <p><%= link_to u, user_category_path(@user, u)   %></p>
-    
-    <%# <%= link_to 'Edit', edit_user_category_path(@user, u) %> %>
-    <%# <%= link_to "Del", user_todolist_path(u), method: :delete%> %> %>
+
   <% end %>
 </ul>
-  <%# <p><%= link_to "Add a NEW TodoList", new_user_todolist_path %></p> %>
+
 

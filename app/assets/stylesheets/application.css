@@ -13,3 +13,287 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+    font-family: 'Saira', sans-serif;
+    margin: 30px;
+    background-color: #f1f1f1;
+  }
+  
+/* .buttons .SubmitForm {
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    transition: all 1s ease-in-out;
+}
+.buttons .SubmitForm:hover {
+    background-color: #37c88d;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.1);
+    border-radius: 2px;
+    font-weight: bold;
+} */
+
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .container {
+    box-shadow: 5px 5px 2px #ccc;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .topNav {
+    background: #2d2d2d;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+  }
+  .topNav > div {
+    padding: 15px 10PX;
+    margin: 0 5px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .topNav > div:hover,
+  .loginContainer .buttons > div:hover,
+  .userRegistration .buttons > div:hover,
+  .userLogin .buttons > div:hover,
+  .afterLoginContainer .buttons > div:hover,
+  .todoListContainer .buttons > div:hover,
+  .addContainer .buttons > button:hover,
+  .infoContainer .buttons > div:hover,
+  .infoContainer .buttons .infoDelBtn:hover {
+    background-color: #37c88d;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.1);
+    border-radius: 2px;
+    font-weight: bold;
+  }
+  
+  .userLogin,
+  .userRegistration,
+  .loginContainer,
+  .afterLoginContainer,
+  .todoListContainer,
+  .addContainer,
+  .infoContainer {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #ccc;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #fff;
+    background: linear-gradient(
+        0deg,
+        rgba(39, 192, 230, .5) 0%,
+        rgba(122, 0, 237, .6) 100%
+      ),
+      url('https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=');
+    background-position: center center;
+  }
+  
+  .loginContainer .welcomeText,
+  .afterLoginContainer .welcomeText,
+  .infoContainer .infoTitle {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 60px;
+    width: 500px;
+    margin: auto;
+    line-height: 80px;
+  }
+  
+  .loginContainer .buttons > div {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 8px 15px;
+    margin: 0 5px;
+  }
+  
+  /* User Login and Registration */
+  .userLogin .userInfo,
+  .userRegistration .userInfo,
+  .addContainer .userInfo {
+    width: 400px;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 3px;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .userLogin .userInfo:not(:placeholder-shown),
+  .userRegistration .userInfo:not(:placeholder-shown),
+  .addContainer .userInfo:not(:placeholder-shown) {
+    border-color: #00ffaa;
+  }
+  
+  .userLogin input::placeholder,
+  .userRegistration input::placeholder {
+    color: rgba(255, 255, 255, .6);
+  }
+  
+  .userLogin .buttons,
+  .userRegistration .buttons,
+  .addContainer .buttons,
+  .infoContainer .buttons {
+    margin-top: 50px;
+  }
+  .userLogin .buttons > div,
+  .userRegistration .buttons > div,
+  .afterLoginContainer .buttons > div,
+  .todoListContainer .buttons > div,
+  .addContainer .buttons > div,
+  .infoContainer .buttons > div,
+  .addContainer .buttons > button,
+  .infoContainer .buttons .infoDelBtn,
+  .todoListContainer .status{
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+  }
+  
+  .todoListContainer .status{
+    outline: none;
+    border: none;
+  }
+  .infoContainer .buttons{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* TODO LISTS */
+  .todoListContainer .toDoList,
+  .infoContainer .infoDescription {
+    border: 2px solid;
+    width: 70%;
+    margin: 10px;
+    background: rgba(205, 205, 205, 0.4);
+  }
+  .todoListContainer .toDoList .topList,
+  .infoContainer .infoDescription {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted;
+    align-items: center;
+    padding: 7px;
+  }
+  
+  .infoContainer .infoDescription {
+    border: 1px dotted;
+  }
+  
+  .todoListContainer .toDoList .topList #title {
+    font-size: 40px;
+  }
+  
+  .todoListContainer .toDoList .topList #status {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .todoListContainer .toDoList .bottomList {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 10px; */
+  }
+  
+  /* TODO user Options */
+  .todoListContainer .toDoList .bottomList .userOptions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .todoListContainer .toDoList .bottomList .userOptions  button {
+    margin: 0px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    color: white;
+    background: transparent;
+    border: inherit;
+    font-size: 12px;
+    outline: none;
+  }
+  
+  .todoListContainer .toDoList .bottomList > #category {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+  
+  .todoListContainer .toDoList #status:hover {
+    color: #37c88d;
+    cursor: pointer;
+    transform: scale(1.1);
+    border-radius: 2px;
+    font-weight: bold;
+  }
+  
+  .todoListContainer .toDoList .bottomList .userOptions > button:hover {
+    background-color: #37c88d;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.1);
+    border-radius: 2px;
+    font-weight: bold;
+  }
+  
+  .todoListContainer .toDoList .bottomList .userOptions #del:hover {
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.1);
+    border-radius: 2px;
+    font-weight: bold;
+  }
+  
+  /* User Option to ADD toDo */
+  
+  /* Footer */
+  .bottom {
+    background-color: #333;
+    color: #aaa;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .bottom:hover {
+    color: #00ffaa;
+    transition: all 0.5s ease-in-out;
+  }
+  .bottom:hover span {
+    color: red;
+    transition: all 0.5s ease-in-out;
+    animation: beat 1s linear infinite;
+  }
+  
+  @keyframes beat {
+    50% {
+      opacity: 0;
+    }
+  }
+  

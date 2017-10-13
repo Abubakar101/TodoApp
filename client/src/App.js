@@ -11,8 +11,9 @@ class App extends Component {
     return (
       <div className="App">
           <Link to = "/todolists">Todolists</Link>
+          <Link to = "/categories">Categories</Link>
           <Route exact path="/todolists" component={Todolists} />
-          <Route exact path="/categories/NEW" component={Categories} />
+          <Route exact path="/categories" component={Categories} />
 
       </div>
     );

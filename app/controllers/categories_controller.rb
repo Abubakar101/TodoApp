@@ -2,14 +2,16 @@ class CategoriesController < ApplicationController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 
     def index
-        # @user = User.find(params[:user_id])
-        @todolists = Todolist.where(:category => params[:category]).all
+        @user = User.find(params[:user_id])
+        @todolists = Todolist.pluck(:category)
         # @categories = Todolist.pluck(:category)
-        render json: { message: "ok", categories_data: @todolists }
+        # render json: { message: "ok", categories_data: @todolists }
     end
 
     def show
-
+      @todolist = Todolist.where(:category => params[:category]).all
+      # @categories = Todolist.pluck(:category)
+      # render json: { message: "ok", categories_data: @todolist }
     end
 
     def destroy
@@ -22,8 +24,8 @@ class CategoriesController < ApplicationController
     end
 
     def update
-        # p = todolist_params
-        # p[:category] = Category.find(todolist_params[:category])
+        p = todolist_params
+        p[:category] = Category.find(todolist_params[:category])
         @category = Todolist.pluck(:category)
            respond_to do |format|
              if @category.update(todolist_params)
