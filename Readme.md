@@ -78,5 +78,5 @@ Use this section to include a brief code snippet of functionality that you are p
 **RESOLUTION**: Added parent ID inside the `set_todolist` i.e., `@user = User.find(params[:user_id])`
 
 **ERROR**: `Not able to pass the name of category in params correctly`                              
-**RESOLUTION**: Installed the gem called `friendly_id` which allows it.
+**RESOLUTION**: 
 
