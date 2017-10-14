@@ -37,10 +37,9 @@ html {
   outline: none;
 }
 
-.underLine{
-    border-bottom: 1px dotted;
+.underLine {
+  border-bottom: 1px dotted;
 }
-
 
 /* .buttons .Submit:hover {
     background-color: #37c88d;
@@ -165,8 +164,8 @@ a {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.userEdit{
-    opacity: 0.5;
+.userEdit {
+  opacity: 0.5;
 }
 
 .userLogin .buttons,
@@ -183,7 +182,7 @@ a {
 .infoContainer .buttons > div,
 .addContainer .buttons > button,
 .infoContainer .buttons .infoDelBtn,
-.todoListContainer .status {
+.todoListContainer #status {
   display: inline-block;
   border: 1px solid #fff;
   padding: 8px 15px;
@@ -193,9 +192,10 @@ a {
   color: white;
 }
 
-.todoListContainer .status {
+.todoListContainer #status {
   outline: none;
   border: none;
+  text-shadow: 2px 2px rgba(85, 104, 109, 0.77);
 }
 .infoContainer .buttons {
   display: flex;
@@ -209,6 +209,7 @@ a {
   width: 70%;
   margin: 10px;
   background: rgba(205, 205, 205, 0.4);
+  border-radius: 23px;
 }
 .todoListContainer .toDoList .topList,
 .infoContainer .infoDescription {
@@ -265,12 +266,17 @@ a {
   padding-left: 10px;
 }
 
-.todoListContainer .toDoList #status:hover,
-#category:hover {
+.todoListContainer .toDoList #status:hover {
   color: #37c88d;
   cursor: pointer;
   transform: scale(1.1);
   border-radius: 2px;
+  font-weight: bold;
+}
+
+#category a:hover {
+  font-size: 17px;
+  color: antiquewhite;
   font-weight: bold;
 }
 
@@ -283,6 +289,9 @@ a {
   font-weight: bold;
 }
 
+.todoListContainer .toDoList .bottomList .userOptions #cat:hover {
+  background-color: #ebdaa7;
+}
 .todoListContainer .toDoList .bottomList .userOptions #del:hover {
   background-color: red;
   color: #fff;
