@@ -2,13 +2,13 @@
   <div class="addContainer">
 
 
-    <%= f.text_field :title, :value => "", :placeholder => "Title", :class => 'userInfo'  %>
+    <%= f.text_field :title,  :class => 'userInfo'  %>
 
 
-      <%= f.text_field :category, :value => "", :placeholder => "Category", :class => 'userInfo'  %>
+      <%= f.text_field :category, :class => 'userInfo'  %>
 
 
-        <%= f.text_field :description, :value => "", :placeholder => "Description", :class => 'userInfo'  %>
+        <%= f.text_field :description,  :class => 'userInfo'  %>
 
           <div class="buttons">
             <button type="submit"><%= f.submit 'Update Item', :class => 'Submit' %></button>
@@ -16,5 +16,5 @@
           <div class="buttons">
             <%= link_to '↼ Back to List', user_todolists_path %>
           </div>
-  </div>
           <% end %>
+  </div>

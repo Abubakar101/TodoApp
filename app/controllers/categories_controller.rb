@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
       @todolist = Todolist.where(:category => params[:category]).all
       # @categories = Todolist.pluck(:category)
       # render json: { message: "ok", categories_data: @todolist }
+      # debug
     end
 
     def destroy
@@ -38,7 +39,8 @@ class CategoriesController < ApplicationController
 
        private
        def set_category 
-        @user = User.find(params[:user_id])
+        # @user = User.find(params[:user_id])
+        @user = current_user
         @category = Todolist.where(category:(params[:id]))
         
         

@@ -1,17 +1,16 @@
-<h1 id="notice"><%= @user.inspect%></h1>
+<div class="todoListContainer">
+<h1 id="notice">Hello <%= @user.name%>,</h1>
+<h3>Go to your: <%= link_to 'TodoList', user_todolists_path(@user), :class => 'underLine' %></h3>
+<br>  
+<br>  
+   <%= link_to 'Edit Account Info', edit_user_path(@user) %> -
+    <%= link_to "Del Your Account", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %>
+ <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </p>
+</div>
 
-<p><%= @user.name%></p>
-<p><%= @user.email%></p>
-<p><%= @user.username%></p>
-<p><%= @user.password%></p>
-   
-   
-   <%= link_to 'Edit', edit_user_path(@user) %> |
-    <%= link_to "Del", user_path(@user), method: :delete %> |
-    
-    <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </p>
-
+ 
 
 
-<p><%= link_to 'Home', users_path %> | 
-<%= link_to 'TodoList', user_todolists_path(@user) %> </p>
+
+  
+

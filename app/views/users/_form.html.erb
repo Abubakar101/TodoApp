@@ -1,22 +1,21 @@
 <%= form_for(@user) do |f| %>
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, :place_holder => "Add a New Name" %>
+  <div class="">
+    <%= f.label :name,  :class => 'userEdit' %> <%= f.text_field :name, :place_holder => "Add a New Name", :class => 'userInfo'  %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, :place_holder => "Add a New Email address" %>
+  <div class="">
+    <%= f.label :email,  :class => 'userEdit' %> <%= f.text_field :email, :place_holder => "Add a New Email address", :class => 'userInfo'  %>
   </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username, :place_holder => "Add a New UserName" %>
+  <div class="">
+    <%= f.label :username,  :class => 'userEdit' %> <%= f.text_field :username, :place_holder => "Add a New UserName", :class => 'userInfo'  %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password, :place_holder => "Add a New Password" %>
+  <div class="">
+    
+    <%= f.label :password,  :class => 'userEdit' %> <%= f.text_field :password, :place_holder => "Add a New Password", :class => 'userInfo'  %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="buttons">
+  <button class="submit">
+    <%= f.submit 'Update User', :class => 'Submit' %>
+    </button>
   </div>
 <% end %>

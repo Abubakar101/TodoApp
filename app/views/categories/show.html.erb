@@ -1,9 +1,10 @@
 <%# <h1 id="notice"><%= @category%></h1> %>
 <%# <h1 id="notice"><%= @category.inspect%></h1> %>
-
+sds
+<% @todolist.inspect %>
 
 <ul>
-  <% @category.each do |u|%>
+  <% @todolist.each do |u|%>
    
     <p><%= link_to u.title%>  </p>
     <p><%= link_to u.description%>  </p>
@@ -13,5 +14,3 @@
      <%= link_to "Del", user_category_path(u), method: :delete %>
   <% end %>
 </ul>
-
-<%= link_to 'Home', users_path %>

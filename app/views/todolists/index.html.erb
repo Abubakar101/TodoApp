@@ -1,7 +1,7 @@
 <div class="todoListContainer">
     <div class="buttons">
       <div class="addBtn"><%= link_to "Add New Todo!", new_user_todolist_path %></div> 
-      <p><%= link_to 'Cat', user_categories_path(@user) %></p>
+      <p><%= link_to 'All Categories', user_categories_path(@user), :class => 'underLine' %></p>
     </div>
 
 
@@ -15,7 +15,7 @@
   </div>
 
   <div class="bottomList">
-    <div id="category"><%= u.category %></div>
+    <div id="category"><%= link_to u.category,user_category_path(@user,u) %></div>
       <div class="userOptions">
       <button id="info"><%= link_to 'INFO', user_todolist_path(@user, u) %></button>
       <button id="edit"><%= link_to 'EDIT', edit_user_todolist_path(@user, u) %></button>

@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TodoApp</title>
-    <%= csrf_meta_tags %>
+
+<head>
+  <title>TodoApp</title>
+  <%= csrf_meta_tags %>
 
 
 
-  <link href="https://fonts.googleapis.com/css?family=Saira|Gloria+Hallelujah" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-      <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Saira|Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
   <div class="container">
-  <header>
-    <div class="topNav">
-      <%# <div id="home" class="navText"><a href="/">HOME</a></div> %>
-      <div id="about" class="navText"><a href="/about">ABOUT</a></div>
-      <%# <div id="todo" class="navText"><a href="/todoslists/">TO-DO</a></div> %>
-    </div>
-  </header>
+    <header>
+
+
+
+
+
+      <div class="topNav">
+        <div id="home" class="navText"><a href="/">HOME</a></div>
+        <div id="about" class="navText"><a href="/about">ABOUT</a></div>
+        <% if !current_user.nil? %>
+          <div id="todo" class="navText">
+            <%= link_to 'TO-DO', user_todolists_path(@user) %>
+          </div>
+          <% end %>
+      </div>
+    </header>
 
     <%= yield %>
-  </body>
-  <footer>
-    <div class="bottom">
-      <div class="bottomText">APP By <strong>ABK</strong><span> &#9829;</span></div>
-    </div>
-  </footer>
+</body>
+<footer>
+  <div class="bottom">
+    <div class="bottomText">APP By <strong>ABK</strong><span> &#9829;</span></div>
+  </div>
+</footer>
+
 </html>

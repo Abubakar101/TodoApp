@@ -1,16 +1,23 @@
+<div class="todoListContainer">
+<div class="addContainer">
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="">
+    <%= f.label :email,  :class => 'userEdit' %>
+    <%= f.email_field :email, autofocus: true , :class => 'userInfo'%>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="buttons">
+    <button class="submit">
+      <%= f.submit "Send me reset password instructions", :class => 'Submit' %>
+    </button>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+
+</div>
+</div>

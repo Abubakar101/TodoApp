@@ -1,14 +1,12 @@
 <%# <h2>Log in</h2> %>
-
+<div class="todoListContainer">
+<div class="addContainer">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="userInfo">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="">
+  <%= f.label :email,  :class => 'userEdit' %><%= f.email_field  :email, autofocus: true, :value => "", :place_holder => "Email", :class => 'userInfo' %>
   </div>
-
-  <div class="userInfo">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="">
+  <%= f.label :password,  :class => 'userEdit' %><%= f.password_field :password, autocomplete: "off", :value => "", :place_holder => "Password", :class => 'userInfo' %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -19,11 +17,13 @@
   <% end -%>
 
   <div class="buttons">
-   <div class="loginBtn">
+   <div class="submit">
 
-    <%= f.submit "LOGIN" %>
+    <%= f.submit "LOGIN", :class => 'Submit' %>
     </div>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+</div>
+</div>
