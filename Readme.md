@@ -52,7 +52,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Project Planning | H | 1 day | 8 hrs |  |
 | Rails - Backend | H | 2 days | 2.5 days |  |
-| Rails - Frontend| H | 2 days | 2 days |  |
+| React - Frontend| H | 2 days | 2 days |  |
 | CSS | H | 2 day | 2 days |  |
 ## Code Snippet
 
