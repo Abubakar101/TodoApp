@@ -1,26 +1,14 @@
 <div class="todoListContainer">
-<h2>Categories</h2>
-
-
+  <h2>Categories</h2>
 <ul>
-  <% @todolists_count.each do |k, u| %>
-  
-    <h4>&#x27a4; <%= link_to "#{k} (#{u})", user_category_path(@user,k) %> </h4>
-
-  
-  <% end %>
-</ul>
-<br>
-    <div class="buttons">
-        
-            <%= link_to '↼ Back to List', user_todolists_path %>
-        
-    </div>
+    <% @todolists_count.each do |k, u| %>
+      <h4>&#x27a4;
+        <%= link_to "#{k} (#{u})", user_category_path(@user,k) %>
+      </h4>
+    <% end %>
+  </ul>
+  <br>
+  <div class="buttons">
+    <%= link_to '↼ Back to List', user_todolists_path %>
+  </div>
 </div>
-
-
-    
-
-
-
-
