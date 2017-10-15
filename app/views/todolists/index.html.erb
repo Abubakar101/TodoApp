@@ -7,7 +7,7 @@
       <% end %>
     </div>
 
-
+<%= @todolists.inspect%>
     <% @todolists.each do |u|%>
     <div class="toDoList">
   <div class="topList">
@@ -18,7 +18,7 @@
   <div class="bottomList">
     <div id="category"><%= u.category %></div>
       <div class="userOptions">
-      <button id="cat"><%= link_to 'CAT', user_category_path(@user,u) %></button>
+      <button id="cat"><%= link_to 'CAT', user_category_path(@user,u.category) %></button>
       <button id="info"><%= link_to 'INFO', user_todolist_path(@user, u) %></button>
       <button id="edit"><%= link_to 'EDIT', edit_user_todolist_path(@user, u) %></button>
       <button id="del" type="Submit"><%= link_to "DEL", user_todolist_path(@user, u), method: :delete%></button>
@@ -27,6 +27,7 @@
 </div>
   <% end %>
 </div>
+
 
  
 
