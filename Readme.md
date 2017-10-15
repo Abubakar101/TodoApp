@@ -77,8 +77,12 @@ Use this section to include a brief code snippet of functionality that you are p
 **ERROR**: `undefined method update for nil:NilClass`                              
 **RESOLUTION**: Added parent ID inside the `set_todolist` i.e., `@user = User.find(params[:user_id])`
 
-**ERROR**: `Not able to pass the name of category in params correctly`                              
-**RESOLUTION**: 
+**ERROR**: `Not able to show all categories by current user`                              
+**RESOLUTION**: `Todolist.where(category: params[:id],user_id: current_user.id)`
+
+**ERROR**: `Not able to show the categorized todolists by current user`                              
+**RESOLUTION**: `Todolist.where(user_id: current_user.id).all.group(:category).count`
+
 **ERROR**: `Not able to show only current user data`                              
 **RESOLUTION**: `@todolists = Todolist.where(user_id: current_user.id)`
 
