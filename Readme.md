@@ -51,9 +51,9 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Feature | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Project Planning | H | 1 day | 8 hrs |  |
-| Rails - Backend | H | 2 days | 2.5 days |  |
+| Rails - Backend | H | 2 days | 3.5 days |  |
 | React - Frontend| H | 2 days | 2 days |  |
-| CSS | H | 2 day | 2 days |  |
+| CSS | H | 2 day | 2.7 days |  |
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
@@ -77,5 +77,8 @@ Use this section to include a brief code snippet of functionality that you are p
 **ERROR**: `undefined method update for nil:NilClass`                              
 **RESOLUTION**: Added parent ID inside the `set_todolist` i.e., `@user = User.find(params[:user_id])`
 
-
+**ERROR**: `Not able to pass the name of category in params correctly`                              
+**RESOLUTION**: 
+**ERROR**: `Not able to show only current user data`                              
+**RESOLUTION**: `@todolists = Todolist.where(user_id: current_user.id)`
 
