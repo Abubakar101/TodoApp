@@ -9,6 +9,7 @@
 
 
         <%= f.text_field :description, :value => "", :placeholder => "Description", :class => 'userInfo'  %>
+        <%= f.hidden_field :status, :value => "To Do"  %>
 
           <div class="buttons">
             <button type="submit"><%= f.submit 'Update Item', :class => 'Submit' %></button>

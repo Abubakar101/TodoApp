@@ -1,10 +1,8 @@
 <div class="infoContainer">
     <div class="infoTitle"><b><%= @todolist.title%></b></div>
-    <div class="infoStatus"><b>STATUS : <%= @todolist.status%></b></div>
+    <div class="infoStatus" onclick="status()"><b>STATUS : <%=@todolist.status%><%= render 'status_form' %></b></div>
     <div class="infoDescription">
-        <p>
-            <%= @todolist.description%>
-        </p>
+        <p><%= @todolist.description%></p>
     </div>
     <div class="buttons">
         <div class="infoEditBtn">
@@ -18,3 +16,4 @@
         </div>
     </div>
 </div>
+

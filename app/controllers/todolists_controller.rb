@@ -2,10 +2,12 @@ class TodolistsController < ApplicationController
     before_action :set_todolist, only: [:show, :edit, :update, :destroy]
 
    def index
-        @user = User.find(params[:user_id])
-       @todolists = Todolist.order('id ASC').all
-       
+        @user = current_user
+        @todolists = Todolist.where(user_id: current_user.id)
+      #  @todolists = Todolist.order('id desc').all
+# debug
     #    render json: { message: "ok", todolists_data: @todolists }
+  
    end
 
    def show
@@ -69,7 +71,7 @@ class TodolistsController < ApplicationController
   
    def update
     p = todolist_params
-    p[:category] = Category.find(todolist_params[:category])
+    # p[:category] = Category.find(todolist_params[:category])
 
        respond_to do |format|
          if @todolist.update(todolist_params)

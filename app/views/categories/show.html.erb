@@ -1,16 +1,10 @@
-<%# <h1 id="notice"><%= @category%></h1> %>
-<%# <h1 id="notice"><%= @category.inspect%></h1> %>
-sds
-<% @todolist.inspect %>
+<div class="todoListContainer">
+<h1 id="notice"><%= @category.title %></h1>
 
-<ul>
-  <% @todolist.each do |u|%>
-   
-    <p><%= link_to u.title%>  </p>
-    <p><%= link_to u.description%>  </p>
-    <p><%= link_to u.category%>  </p>
-    <p><%= link_to u.status%>  </p>
-    <%= link_to 'Edit', edit_user_category_path(u) %>
-     <%= link_to "Del", user_category_path(u), method: :delete %>
-  <% end %>
-</ul>
+<p> <%= @category.description %></p>
+ <p><%= @category.category %></p>
+ <p><%= @category.status %></p>
+
+</div>
+
+

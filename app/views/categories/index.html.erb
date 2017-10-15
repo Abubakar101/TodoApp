@@ -1,10 +1,13 @@
 <div class="todoListContainer">
 <h2>Categories</h2>
 
-<ul>
-  <% @todolists.each do |u| %>
-    <h4>&#x27a4; <%= link_to u, user_category_path(@user, u)%></h4>
 
+<ul>
+  <% @todolists_count.each do |k, u| %>
+  
+    <h4>&#x27a4; <%= link_to "#{k} (#{u})" %> </h4>
+
+  
   <% end %>
 </ul>
 </div>
