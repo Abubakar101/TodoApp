@@ -1,9 +1,23 @@
 <div class="todoListContainer">
-<h1 id="notice"><%= @category.title %></h1>
 
-<p> <%= @category.description %></p>
- <p><%= @category.category %></p>
- <p><%= @category.status %></p>
+
+
+
+
+<ul>
+  <% @category.each do |u| %>
+  
+    <h4><%= u.title %> </h4>
+    <h4><%= link_to u.category %> </h4>
+    <h4><%= link_to u.status %> </h4>
+    
+
+
+  
+  <% end %>
+</ul>
+
+
 
 </div>
 

@@ -5,7 +5,7 @@
 <ul>
   <% @todolists_count.each do |k, u| %>
   
-    <h4>&#x27a4; <%= link_to "#{k} (#{u})" %> </h4>
+    <h4>&#x27a4; <%= link_to "#{k} (#{u})", user_category_path(@user,k) %> </h4>
 
   
   <% end %>

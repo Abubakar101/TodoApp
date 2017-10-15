@@ -57,7 +57,14 @@ class CategoriesController < ApplicationController
        private
        def set_category 
         @user = current_user
-        @category = Todolist.find(params[:id])
+        # @category = Todolist.find(params[:id])
+
+
+
+
+        @category = Todolist.where(category: params[:id],user_id: current_user.id)
+
+
         
        end
         def todolist_params
