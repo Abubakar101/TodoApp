@@ -1,24 +1,39 @@
+
+
+
 <div class="todoListContainer">
+    <div class="buttons">
+      <div class="addBtn"><%= link_to "Add New Todo!", new_user_todolist_path %></div> 
+      
+      <% if !@category.empty? %>
+        <p><%= link_to 'All Categories', user_categories_path(@user), :class => 'underLine' %></p>
+      <% end %>
+    </div>
 
 
+    <% @category.each do |u|%>
+    <div class="toDoList">
+  <div class="topList">
+    <div id="title"><%= u.title %></div>
+    <div id="status"><%= u.status %></div>
+  </div>
 
-
-
-<ul>
-  <% @category.each do |u| %>
-  
-    <h4><%= u.title %> </h4>
-    <h4><%= link_to u.category %> </h4>
-    <h4><%= link_to u.status %> </h4>
-    
-
-
-  
+  <div class="bottomList">
+    <div id="category"><%= u.category %></div>
+      <div class="userOptions">
+      <button id="cat"><%= link_to 'CAT', user_category_path(@user,u) %></button>
+      <button id="info"><%= link_to 'INFO', user_todolist_path(@user, u) %></button>
+      <button id="edit"><%= link_to 'EDIT', edit_user_todolist_path(@user, u) %></button>
+      <button id="del" type="Submit"><%= link_to "DEL", user_todolist_path(@user, u), method: :delete%></button>
+    </div> 
+  </div>
+</div>
   <% end %>
-</ul>
-
-
-
 </div>
 
+ 
+
+
+
+  
 
