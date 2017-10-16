@@ -2,11 +2,13 @@
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+This is a ToDo app which lets you save your todo list one by one. You can add, edit and delete your list and you can also categorize them for your convenience. There is a login and registration option, so each user has his/her own privacy. And whenever you are done with todo item, you can change the status or delete it permanently.   
 
 ## Installation
-
-Use this section to include all steps needed to download your project including installing dependencies and seeding your a database.
+- Fork it to your github account!
+- Clone it to your local machine!
+- Inside the project directory on the terminal, type `rails db:create db:migrate db:seed` - if it doesn't work try separately i.e., `rails db:create` in order.
+- Type `rails s` to start the server and go to `http://localhost:3000/` 
 
 ## TimeFrame
 ![Time-Schedule](./assets/Time-Schedule.jpg)
