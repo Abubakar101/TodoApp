@@ -41,22 +41,13 @@ html {
   border-bottom: 1px dotted;
 }
 
-/* .buttons .Submit:hover {
-    background-color: #37c88d;
-    color: #fff;
-    cursor: pointer;
-    transform: scale(1.1);
-    border-radius: 2px;
-    font-weight: bold;
-} */
-
 a {
   text-decoration: none;
   color: inherit;
 }
 .container {
   box-shadow: 5px 5px 2px #ccc;
-  max-width: 1000px;
+  max-width: 1150px;
   margin: auto;
 }
 .topNav {
@@ -98,7 +89,7 @@ a {
 .todoListContainer,
 .addContainer,
 .infoContainer {
-  min-height: 300px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -313,6 +304,12 @@ a {
   border-radius: 2px;
   font-weight: bold;
 }
+
+.infoStatus{
+  cursor: pointer;
+  transition: all 1s ease-in-out; 
+}
+
 
 /* User Option to ADD toDo */
 

@@ -1,6 +1,6 @@
 <div class="infoContainer">
     <div class="infoTitle"><b><%= @todolist.title%></b></div>
-    <div class="infoStatus" onclick="status()"><b>STATUS : <%=@todolist.status%><%= render 'status_form' %></b></div>
+    <div class="infoStatus" onclick="document.statusForm.submit()"><b>STATUS : <%=@todolist.status%> <%= render 'status_form' %></b></div>
     <div class="infoDescription">
         <p><%= @todolist.description%></p>
     </div>

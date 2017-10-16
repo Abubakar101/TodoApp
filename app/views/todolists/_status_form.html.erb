@@ -1,4 +1,4 @@
-<%= form_for([@user, @todolist]) do |f| %>
+<%= form_for([@user, @todolist], :html => { :name => "statusForm" }) do |f| %>
 
     <%= f.hidden_field :title  %>
     <%= f.hidden_field :category  %>
@@ -6,9 +6,9 @@
 
 
       <% if @todolist.status == "To Do" %>
-        <%= f.text_field :status, :value => "Done",  :class => 'userInfo' %>
+        <%= f.hidden_field :status, :value => "Done",  :class => 'userInfo' %>
     <% else %>
-         <%= f.text_field :status, :value => "To Do",  :class => 'userInfo' %>
+         <%= f.hidden_field :status, :value => "To Do",  :class => 'userInfo' %>
      <% end %>
             <%= f.submit 'Update Item', :style => "display: none;" %>
 
