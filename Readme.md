@@ -32,42 +32,133 @@ Include images of the following wireframes:
 
 Include user stories regarding how users will interact with the app such as when the page loads how will the user migrate through the page.  
 
-## Project Management
+# Project Management
+### ToDo 
+- Build Frontend in React
+- Get Amazon API
 
-Use Github's `Project Managment Tab`  to list all the task that need to be completed.  At a minimum the tasks should be categroized into one of the four columns:  ToDo, InProgress, Complete, Issue
+### InProgress
+- Clickable 'To Do' and 'Done' on Index Todolists
 
-## Routes..Controllers..Models..Views..Oh My...
+### Complete
+####  --- Migrations ---
+##### Users
+- name
+- username
+- password
 
-Use this section to document the routes and supporting functionality of the app. 
+##### Todo Lists
+- References to user
+- title
+- description
+- References to category
+- status 
 
-| Route | Controller | Model | Does | Result | View | Exits |
-| --- | :---: |  :---: | :---: | :---: | :---: | :---: |
-| /quotes | GET | Index | findAll | Selects *  | [{quotes}] | ShowQuotes | redirect(/quotes) 
+##### Seed
+####  - - - Models - - -
+##### User
+- has_many :todo_lists
+
+##### TodoList
+- belongs_to :user
+
+##### TodoList
+- belongs_to :user
+
+####  - - - Controllers - - -
+##### User
+- Index - for testing
+- Show by ID
+- Create and new method
+- Destroy method 
+- Update method
+
+##### TodoLists 
+- Index
+- Show by id
+- Create and new method
+- Update method
+- Destroy method
+
+##### Categories 
+- Index
+- Show by ID
+
+####  - - - Routes - - -
+- Look Below
+
+
+####  - - - Views - - -
+##### Users
+- Index view
+- Show by ID
+- Edit 
+- New
+- Form
+
+##### Todolists
+- Index view 
+- Show by ID 
+- Edit
+- New
+- Form
+
+##### Categories
+- Index view
+- Show by ID
+
+
+####  - - - Authentication & Authorization  - - -
+- Users
+- Todolists
+
+####  - - - CSS  - - -
+
+### Issue
+- Rendering the status_form on the Todolists Index and passing the todolist's ID.
+
+## Routes..
+
+- /users/new    - Create new user
+- /users/2      - Specific User by ID
+- /users/2/edit - Edit User Information
+
+- /users/2/todoLists       - Specific User ALL Todolists
+- /users/2/todoLists/2     - Specific User Specific Todo list
+- /users/2/todoLists/2/edit- Edit Specific User Specific Todo list
+- /users/2/todoLists/new   - New Specific User Specific Todo list
+
+- /users/2/categories        - Specific User All Categories
+- /user/2/categories/2       - Specific User Specific Category
+- /users/2/categories/2/edit - Edit Specific User Specific Category
+- /users/2/categories/new    - New Specific User Specific Category
 
 ## Functional Components
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Based on the prioritized feature list completed in the `Priority Matix` and assign time estimates.  
-
 | Feature | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Project Planning | H | 1 day | 8 hrs |  |
 | Rails - Backend | H | 2 days | 3.5 days |  |
 | React - Frontend| H | 2 days | 2 days |  |
 | CSS | H | 2 day | 2.7 days |  |
+
 ## Code Snippet
+ ```
+ Categories Controller - Index
+ 
+ @todolists = Todolist.where(user_id: current_user.id).all.group_by(&:category)
+        
+@todolists_count = Todolist.where(user_id: current_user.id).all.group(:category).count
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
+Categories Controller - Show
 
-## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+@category = Todolist.where(category: params[:id],user_id: current_user.id)
+```  
 
-## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+## Additional Gem
+ ```gem 'devise'``` User Authentication and Authorization 
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
-
-#### SAMPLE.....
+#### 
 **ERROR**: `PG::UndefinedTable: ERROR:  relation "categories" does not exist`                               
 **RESOLUTION**: Deleted the `foreign_key: true` from `t.references` values
 
