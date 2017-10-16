@@ -8,29 +8,21 @@ Use this section to describe your final project and perhaps any links to relevan
 
 Use this section to include all steps needed to download your project including installing dependencies and seeding your a database.
 
-## Priority Matrix
+## TimeFrame
+![Time-Schedule](./assets/Time-Schedule.jpg)
 
-Include an image of the matirx as well as a full bulleted list of features that have been prioritized based on the `Time and Importance` Matix.  
-
-## MVP 
-
-Include the full list of features that will be part of your MVP 
-
-## Post-MVP
-
-Include the full list of features that you are considering for Post-MVP
+## Priority Matrix & MVP & Post-MVP
+![Matrix](./assets/Matrix.jpg)  
 
 ## Wireframes
+![WireFrames](./assets/TimeFrame.jpg)
 
-Include images of the following wireframes:
-
-- Landing Page
-- All supporting pages
-- The below routes\controllers\models\views table
+## Table and Relationships
+![Relationships](./assets/Tables.jpg)
 
 ## User Stories
-
-Include user stories regarding how users will interact with the app such as when the page loads how will the user migrate through the page.  
+![User Story 1](./assets/userStory1.jpg)
+![User Story 2](./assets/userStory2.jpg)
 
 # Project Management
 ### ToDo 
@@ -46,25 +38,20 @@ Include user stories regarding how users will interact with the app such as when
 - name
 - username
 - password
-
 ##### Todo Lists
 - References to user
 - title
 - description
 - References to category
 - status 
-
 ##### Seed
 ####  - - - Models - - -
 ##### User
 - has_many :todo_lists
-
 ##### TodoList
 - belongs_to :user
-
 ##### TodoList
 - belongs_to :user
-
 ####  - - - Controllers - - -
 ##### User
 - Index - for testing
@@ -72,22 +59,17 @@ Include user stories regarding how users will interact with the app such as when
 - Create and new method
 - Destroy method 
 - Update method
-
 ##### TodoLists 
 - Index
 - Show by id
 - Create and new method
 - Update method
 - Destroy method
-
 ##### Categories 
 - Index
 - Show by ID
-
 ####  - - - Routes - - -
 - Look Below
-
-
 ####  - - - Views - - -
 ##### Users
 - Index view
@@ -95,30 +77,22 @@ Include user stories regarding how users will interact with the app such as when
 - Edit 
 - New
 - Form
-
 ##### Todolists
 - Index view 
 - Show by ID 
 - Edit
 - New
 - Form
-
 ##### Categories
 - Index view
 - Show by ID
-
-
 ####  - - - Authentication & Authorization  - - -
 - Users
 - Todolists
-
 ####  - - - CSS  - - -
-
 ### Issue
 - Rendering the status_form on the Todolists Index and passing the todolist's ID.
-
 ## Routes..
-
 - /users/new    - Create new user
 - /users/2      - Specific User by ID
 - /users/2/edit - Edit User Information
