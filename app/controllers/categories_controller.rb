@@ -25,11 +25,6 @@ class CategoriesController < ApplicationController
     end
 
     def show
-      # @todolist = Todolist.where(:category => params[:category]).all
-      # debug
-      # @categories = Todolist.pluck(:category)
-      # render json: { message: "ok", categories_data: @todolist }
-    #   debug
     end
 
     def destroy
@@ -57,16 +52,8 @@ class CategoriesController < ApplicationController
        private
        def set_category 
         @user = current_user
-        # @category = Todolist.find(params[:id])
-
-
-
-
         @category = Todolist.where(category: params[:id],user_id: current_user.id)
-
-
-        
-       end
+        end
         def todolist_params
          params.require(:todolist).permit(:category)
        end

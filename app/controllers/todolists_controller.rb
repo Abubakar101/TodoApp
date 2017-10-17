@@ -4,8 +4,6 @@ class TodolistsController < ApplicationController
    def index
         @user = current_user
         @todolists = Todolist.where(user_id: current_user.id)
-      #  @todolists = Todolist.order('id desc').all
-# debug
     #    render json: { message: "ok", todolists_data: @todolists }
   
    end
@@ -23,27 +21,10 @@ class TodolistsController < ApplicationController
 
    end
 
-#    def create
-#     @user = User.find(params[:user_id])
-#     @todolist = Todolist.new(todolist_params)
-#     @todolist[:user_id] = @user.id
-#     @todolist.user = current_user
-#     @todolist.save
-#     if @todolist.save
-#         debug
-    
-#     puts @todolist 
-#     puts @todolist.user
-#     puts @todolist[:user_id]
-#     redirect_to user_todolists_path
-#     end
-#   end
-
    def create
     @user = User.find(params[:user_id])
        @todolist = Todolist.new(todolist_params)
        @todolist[:user_id] = @user.id
-    #    @todolist.user = current_user
        respond_to do |format|
          if @todolist.save
            format.html { redirect_to user_todolists_path, notice: 'Post was successfully created.' }
@@ -71,8 +52,6 @@ class TodolistsController < ApplicationController
   
    def update
     p = todolist_params
-    # p[:category] = Category.find(todolist_params[:category])
-
        respond_to do |format|
          if @todolist.update(todolist_params)
            format.html { redirect_to user_todolist_path, notice: 'Post was successfully updated.' }
