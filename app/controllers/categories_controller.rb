@@ -3,8 +3,9 @@ class CategoriesController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
-        @todolists = Todolist.where(user_id: current_user.id).all.group_by(:category)
+        @todolists = Todolist.where(user_id: current_user.id).all.group_by(&:category)
         @todolists_count = Todolist.where(user_id: current_user.id).all.group(:category).count
+        # debug
         
         # @todolists = Todolist.where(user_id: current_user.id).all 
         # @todolists = Todolist.pluck(:category).where(current.user.id)
