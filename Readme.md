@@ -115,7 +115,6 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 | --- | :---: |  :---: | :---: | :---: |
 | Project Planning | H | 1 day | 8 hrs |  |
 | Rails - Backend | H | 2 days | 3.5 days |  |
-| React - Frontend| H | 2 days | 2 days |  |
 | CSS | H | 2 day | 2.7 days |  |
 
 ## Code Snippet
