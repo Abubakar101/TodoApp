@@ -3,7 +3,7 @@ Deployed on Heroku - https://todolistsga.herokuapp.com/
 
 ## Project Description
 
-This is a ToDo app which lets you save your todo list one by one. You can add, edit and delete your list and you can also categorize them for your convenience. There is a login and registration option, so each user has his/her own privacy. And whenever you are done with todo item, you can change the status or delete it permanently.   
+This is a ToDo app which lets you save your todo list one by one. You can add, edit and delete your list and you can also categorize them for your convenience. There is a login and registration option, so each user has his/her own privacy. And whenever you are done with todo item, you can change the status and/or delete it permanently.   
 
 ## Installation
 - Fork it to your github account!
@@ -30,10 +30,10 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 # Project Management
 ### ToDo 
 - Build Frontend in React
-- Get Amazon API
+- Get Amazon API to show related products
 
 ### InProgress
-- Clickable 'To Do' and 'Done' on Index Todolists
+- Clickable 'To Do' and 'Done' on Index Todolists Directly
 
 ### Complete
 ####  --- Migrations ---
