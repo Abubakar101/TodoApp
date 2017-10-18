@@ -31,6 +31,7 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 ### ToDo 
 - Build Frontend in React
 - Get Amazon API to show related products
+- Backend: Separate section for Todo lists and Done.
 
 ### InProgress
 - Clickable 'To Do' and 'Done' on Index Todolists Directly
