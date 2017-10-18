@@ -5,6 +5,9 @@ class CategoriesController < ApplicationController
         @user = User.find(params[:user_id])
         @todolists = Todolist.where(user_id: current_user.id).all.group_by(&:category)
         @todolists_count = Todolist.where(user_id: current_user.id).all.group(:category).count
+
+        # "&" - https://stackoverflow.com/questions/1961030/ruby-ampersand-colon-shortcut 
+
         # debug
         
         # @todolists = Todolist.where(user_id: current_user.id).all 
