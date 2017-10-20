@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   # get '/categories/:category', to: 'categories#show', as: 'category'
 
   resources :categories
-  resources :todos
+  resources :dones
  
 
   resources :users do
     resources :todolists
     resources :categories
-    resources :todos
+    resources :dones
   end
 
   
