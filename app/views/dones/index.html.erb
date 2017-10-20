@@ -1,10 +1,10 @@
 <div class="todoListContainer">
+<h2>All Done</h2>
     <div class="buttons">
       <div class="addBtn"><%= link_to "Add New Todo!", new_user_todolist_path %></div> 
       
       <% if !@todolists.empty? %>
         <p><%= link_to 'All Categories', user_categories_path(@user), :class => 'underLine' %></p>
-        <p><%= link_to 'All Done', user_dones_path(@user), :class => 'underLine' %></p>
       <% end %>
     </div>
 
@@ -26,6 +26,10 @@
   </div>
 </div>
   <% end %>
+<br>
+    <div class="buttons">
+    <%= link_to '↼ Back to List', user_todolists_path %>
+  </div>
 </div>
 
 
