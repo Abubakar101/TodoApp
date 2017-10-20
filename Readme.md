@@ -54,8 +54,6 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 - has_many :todo_lists
 ##### TodoList
 - belongs_to :user
-##### TodoList
-- belongs_to :user
 ####  - - - Controllers - - -
 ##### User
 - Index - for testing
