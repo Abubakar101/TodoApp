@@ -7,6 +7,7 @@ git_source(:github) do |repo_name|
 end
 gem 'friendly_id', '~> 5.1.0'
 gem 'responders'
+gem 'foreman'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

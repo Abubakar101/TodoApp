@@ -11,8 +11,8 @@ class Categories extends Component {
     };
   }
 
-  componentDidMount() {
-    axios({
+  async componentDidMount() {
+    await axios({
       method: "GET",
       url: "/categories"
     })

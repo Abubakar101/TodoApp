@@ -4,7 +4,7 @@ class TodolistsController < ApplicationController
    def index
         @user = current_user
         @todolists = Todolist.where(user_id: current_user.id, status: 'To Do')
-    #    render json: { message: "ok", todolists_data: @todolists }
+       render json: { message: "ok", todolists_data: @todolists }
   
    end
 

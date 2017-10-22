@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
 
     #    @count = Todolist.where(user_id: current_user.id).group(:category).count
 
-        # render json: { message: "ok", categories_data: @todolists }
+        render json: { message: "ok", categories_data: @todolists }
     end
 
     def show
