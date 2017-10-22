@@ -3,7 +3,7 @@ Deployed on Heroku - https://todolistsga.herokuapp.com/
 
 ## Project Description
 
-This is a ToDo app which lets you save your todo list one by one. You can add, edit and delete your list and you can also categorize them for your convenience. There is a login and registration option, so each user has his/her own privacy. And whenever you are done with todo item, you can change the status and/or delete it permanently.   
+This is a ToDo app which lets you save your todo list one by one. You can add, edit and delete your list and you can also categorize them and there is a separate section for todolists with the status "done" for your convenience. There is a login and registration option, so each user has his/her own privacy. And whenever you are done with todo item, you can change the status and/or delete it permanently.   
 
 ## Installation
 - Fork it to your github account!
@@ -31,7 +31,6 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 ### ToDo 
 - Build Frontend in React
 - Get Amazon API to show related products
-- Backend: Separate section for Todo lists and Done.
 
 ### InProgress
 - Clickable 'To Do' and 'Done' on Index Todolists Directly
@@ -54,8 +53,6 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 - has_many :todo_lists
 ##### TodoList
 - belongs_to :user
-##### TodoList
-- belongs_to :user
 ####  - - - Controllers - - -
 ##### User
 - Index - for testing
@@ -72,6 +69,8 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 ##### Categories 
 - Index
 - Show by ID
+##### Dones 
+- Index
 ####  - - - Routes - - -
 - Look Below
 ####  - - - Views - - -
@@ -90,6 +89,8 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 ##### Categories
 - Index view
 - Show by ID
+##### Dones
+- Index view
 ####  - - - Authentication & Authorization  - - -
 - Users
 - Todolists
@@ -111,11 +112,12 @@ This is a ToDo app which lets you save your todo list one by one. You can add, e
 - /users/2/categories/2/edit - Edit Specific User Specific Category
 - /users/2/categories/new    - New Specific User Specific Category
 
+- /users/2/dones        - All todolists with status "Done"
 ## Functional Components
 | Feature | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Project Planning | H | 1 day | 8 hrs |  |
-| Rails - Backend | H | 2 days | 3.5 days |  |
+| Rails - Backend | H | 2 days | 3.7 days |  |
 | CSS | H | 2 day | 2.7 days |  |
 
 ## Code Snippet
