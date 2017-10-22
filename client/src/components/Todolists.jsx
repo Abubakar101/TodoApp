@@ -29,6 +29,7 @@ class Todolists extends Component {
 
   showTodolistsOnPage() {
     return this.state.apiData.map(todolist => {
+      console.log(todolist)
       return (
         <div className="todolist" key={todolist.id}>
           <p>{todolist.title}</p>

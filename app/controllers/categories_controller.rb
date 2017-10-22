@@ -2,7 +2,8 @@ class CategoriesController < ApplicationController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 
     def index
-        @user = User.find(params[:user_id])
+        @user = current_user
+        # @user = User.find(params[:user_id])
         @todolists = Todolist.where(user_id: current_user.id).all.group_by(&:category)
         @todolists_count = Todolist.where(user_id: current_user.id).all.group(:category).count
 
@@ -24,7 +25,7 @@ class CategoriesController < ApplicationController
 
     #    @count = Todolist.where(user_id: current_user.id).group(:category).count
 
-        render json: { message: "ok", categories_data: @todolists }
+        render json: { message: "ok", categories_data: @todolists_count, user:@user }
     end
 
     def show

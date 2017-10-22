@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import axios from "axios";
 
+
 class Categories extends Component {
   constructor() {
     super();
     this.state = {
       apiData: null,
+      apiArr: [],
       apiDataLoaded: false
     };
   }
@@ -17,29 +19,38 @@ class Categories extends Component {
       url: "/categories"
     })
       .then(res => {
-        console.log("DATABASE DATA '/", res);
+        // console.log("DATABASE DATA '/", res);
         this.setState({
           apiData: res.data.categories_data,
           apiDataLoaded: true
         });
       })
       .catch(err => console.error(err));
+      
+      let state = this.state.apiData;      
+      for (let k in state) {
+        let obj = {};
+        obj[k] = state[k]
+        this.setState({
+          apiArr: this.state.apiArr.concat(obj)
+        })
+      }
   }
 
   showCategoriesOnPage() {
-    console.log(this.state.apiData)
-    return this.state.apiData.map((category, i) => {
-      return (
-        <div className="category" key={i}>
-          <p>{category}</p>
-         
-        </div>
-      );
-    });
+       return this.state.apiArr.map((category, i) => {
+          console.log(Object.values(category))
+              return (
+                <div className="category" key={i}>
+                  <p>{Object.keys(category)} ({Object.values(category)})</p>
+                 
+                </div>
+              );
+              });
   }
 
   render() {
-    console.log(this.state.apiData);
+    // console.log("apiarr", this.state.apiArr);
     return (
       <div className="App">
         {this.state.apiDataLoaded ? (this.showCategoriesOnPage()) : <p>Category Loading...</p>}
@@ -49,9 +60,3 @@ class Categories extends Component {
 }
 
 export default Categories;
-
-// {this.state.apiDataLoaded ? (
-//   this.showCategoriesOnPage()
-// ) : (
-//   <p>Category Loading...</p>
-// )}
