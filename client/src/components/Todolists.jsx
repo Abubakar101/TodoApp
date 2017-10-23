@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import axios from "axios";
-// import Categories from"./components/Categories";
+import Add from"./components/partials/Add";
 
 class Todolists extends Component {
   constructor() {
