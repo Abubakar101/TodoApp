@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import axios from "axios";
-import Add from"./components/partials/Add";
+import Add from"./AddList";
 
 class Todolists extends Component {
   constructor() {
@@ -36,24 +36,21 @@ class Todolists extends Component {
           <p>{todolist.category} </p>
           <span className="category">{todolist.description}</span>
           <span className="category">{todolist.status}</span>
-          
-        </div>
-      );
-    });
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <div>
-        <Link to = "/categories">CAT</Link>
-          {this.state.apiDataLoaded ? (
-            this.showTodolistsOnPage()
-          ) : (
+          </div>
+        );
+      });
+    }
+    
+    render() {
+      return (
+        <div className="App">
+        <Link to = "/add">ADD</Link>
+        {this.state.apiDataLoaded ? (
+          this.showTodolistsOnPage()
+        ) : (
             <p>Loading...</p>
           )}
          
-        </div>
       </div>
     );
   }
