@@ -9,6 +9,7 @@ class Todolists extends Component {
     this.state = {
       apiData: null,
       apiDataLoaded: false
+
     };
   }
 
@@ -26,7 +27,7 @@ class Todolists extends Component {
       })
       .catch(err => console.error(err));
   }
-
+  
   showTodolistsOnPage() {
     return this.state.apiData.map(todolist => {
       console.log(todolist)
