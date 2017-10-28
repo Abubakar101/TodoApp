@@ -9,28 +9,22 @@ class Todolists extends Component {
     this.state = {
       apiData: null,
       apiDataLoaded: false
-
     };
   }
 
-  componentDidMount() {
-    axios({
-      method: "GET",
-      url: "/todolists"
-    })
-      .then(res => {
-        console.log(res, "DATABASE DATA '/");
-        this.setState({
-          apiData: res.data.todolists_data,
-          apiDataLoaded: true
-        });
-      })
-      .catch(err => console.error(err));
+   componentDidMount() {
+    // console.log(this.props.data, "Todolists")
+     this.setState({
+      apiData: this.props.data,
+      apiDataLoaded: true
+    });
+    // console.log(this.state.apiData, "STATE")
   }
   
   showTodolistsOnPage() {
+    // console.log("showTodolistsOnPage")
     return this.state.apiData.map(todolist => {
-      console.log(todolist)
+      // console.log(this.props.todolists, "Todolists Props")
       return (
         <div className="todolist" key={todolist.id}>
           <p>{todolist.title}</p>
