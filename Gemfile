@@ -5,8 +5,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'friendly_id', '~> 5.1.0'
-gem 'responders'
+
+gem 'rack-cors', :require => 'rack/cors'
 gem 'foreman'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

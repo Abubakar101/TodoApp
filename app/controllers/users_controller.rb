@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
     def show
       @user = current_user
+      render json: { message: "ok", user_data: @user }
     end
 
     def create

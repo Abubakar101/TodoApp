@@ -17,6 +17,7 @@ class AddList extends Component {
     this.setState({
       apiData: this.props.data
     })
+    // debugger
     console.log(this.state.apiData, "data STATE")
   }
 
@@ -25,6 +26,7 @@ class AddList extends Component {
     return nextProps.data !== this.props.data;
   }
   railsSubmit(e) {
+    let userId = this.props.data[0].user_id;
     e.preventDefault();
     console.log(e, "->>>>>>>railsSubmit");
     console.log(e.target.title.value, "->>>>>>>title");
@@ -32,7 +34,7 @@ class AddList extends Component {
     console.log(e.target.description.value, "->>>>>>>description");
     axios({
       method: 'POST',
-      url: 'http://localhost:3001/todolists',
+      url: `http://localhost:3001/users/${userId}/todolists`,
       title: e.target.title.value,
       category: e.target.category.value,
       description: e.target.description.value,
@@ -43,7 +45,6 @@ class AddList extends Component {
       .catch(err => console.log(err));
   }
 
- 
 
   render() {
     // console.log(this.state.apiData, "STATE data")
